@@ -1,0 +1,199 @@
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+85:No changes in the repository.
+89:更新时间: 2025/11/19 18:13:03
+94:更新时间已记录到日志文件
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+85:No changes in the repository.
+89:更新时间: 2025/11/19 18:15:22
+94:更新时间已记录到日志文件
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+85:No changes in the repository.
+89:更新时间: 2025/11/19 18:17:02
+94:更新时间已记录到日志文件
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+85:No changes in the repository.
+89:更新时间: 2025/11/19 18:19:57
+94:更新时间已记录到日志文件
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+71:There are changes in the repository:
+89:更新时间: 2025/11/19 18:26:28
+94:更新时间已记录到日志文件
+82:标准错误: To https://github.com/haiyangzhaoo/site-tools.git
+   fb5bbfb..61194b0  master -> master
+
+81:标准输出: [master 61194b0] update:iptv source 2025/11/19 18:26:28
+ 18 files changed, 1093 insertions(+), 1696 deletions(-)
+
+99:源文件夹 assets 不存在，无法复制。
+99:源文件夹 assets 不存在，无法复制。
+99:源文件夹 assets 不存在，无法复制。
+99:源文件夹 assets 不存在，无法复制。
+99:源文件夹 assets 不存在，无法复制。
+99:源文件夹 assets 不存在，无法复制。
+99:源文件夹 assets 不存在，无法复制。
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+71:There are changes in the repository:
+89:更新时间: 11/19/2025, 7:01:20 PM
+94:更新时间已记录到日志文件
+81:标准输出: [master 8fac86c] update:iptv source 11/19/2025, 7:01:20 PM
+ 1 file changed, 4 insertions(+)
+
+82:标准错误: To https://github.com/haiyangzhaoo/site-tools.git
+   61194b0..8fac86c  master -> master
+
+99:源文件夹 assets 不存在，无法复制。
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+85:No changes in the repository.
+89:更新时间: 11/19/2025, 7:03:21 PM
+94:更新时间已记录到日志文件
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+89:更新时间: 11/19/2025, 7:04:20 PM
+85:No changes in the repository.
+94:更新时间已记录到日志文件
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+85:No changes in the repository.
+89:更新时间: 11/19/2025, 7:05:20 PM
+94:更新时间已记录到日志文件
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+71:There are changes in the repository:
+89:更新时间: 11/20/2025, 6:00:20 PM
+94:更新时间已记录到日志文件
+81:标准输出: [master a5f5400] update:iptv source 11/20/2025, 6:00:20 PM
+ 1 file changed, 1 insertion(+)
+
+82:标准错误: To https://github.com/haiyangzhaoo/site-tools.git
+   8fac86c..a5f5400  master -> master
+
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+71:There are changes in the repository:
+89:更新时间: 11/21/2025, 6:00:21 PM
+94:更新时间已记录到日志文件
+81:标准输出: [master fc5b508] update:iptv source 11/21/2025, 6:00:21 PM
+ 1 file changed, 1 insertion(+)
+
+82:标准错误: To https://github.com/haiyangzhaoo/site-tools.git
+   a5f5400..fc5b508  master -> master
+
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+71:There are changes in the repository:
+89:更新时间: 11/24/2025, 6:00:21 PM
+94:更新时间已记录到日志文件
+78:执行错误: Error: Command failed: git add . && git commit -m "update:iptv source 11/24/2025, 6:00:21 PM" && git push https://haiyangzhaoo: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@github.com/haiyangzhaoo/site-tools.git master
+To https://github.com/haiyangzhaoo/site-tools.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/haiyangzhaoo/site-tools.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+71:There are changes in the repository:
+89:更新时间: 11/25/2025, 6:00:21 PM
+94:更新时间已记录到日志文件
+78:执行错误: Error: Command failed: git add . && git commit -m "update:iptv source 11/25/2025, 6:00:21 PM" && git push https://haiyangzhaoo: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@github.com/haiyangzhaoo/site-tools.git master
+To https://github.com/haiyangzhaoo/site-tools.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/haiyangzhaoo/site-tools.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+71:There are changes in the repository:
+89:更新时间: 2025/11/26 10:35:52
+94:更新时间已记录到日志文件
+78:执行错误: Error: Command failed: git add . && git commit -m "update:iptv source 2025/11/26 10:35:52" && git push https://haiyangzhaoo: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@github.com/haiyangzhaoo/site-tools.git master
+To https://github.com/haiyangzhaoo/site-tools.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/haiyangzhaoo/site-tools.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+71:There are changes in the repository:
+89:更新时间: 2025/11/26 10:46:04
+94:更新时间已记录到日志文件
+82:标准错误: To https://github.com/haiyangzhaoo/site-tools.git
+   bf7a63e..44368f8  master -> master
+
+81:标准输出: [master 44368f8] update:iptv source 2025/11/26 10:46:04
+ 15 files changed, 41 insertions(+), 24951 deletions(-)
+ mode change 100644 => 100755 public/log.txt
+
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+71:There are changes in the repository:
+89:更新时间: 11/26/2025, 6:00:27 PM
+94:更新时间已记录到日志文件
+82:标准错误: To https://github.com/haiyangzhaoo/site-tools.git
+   44368f8..927496c  master -> master
+
+81:标准输出: [master 927496c] update:iptv source 11/26/2025, 6:00:27 PM
+ 5 files changed, 9 insertions(+), 96 deletions(-)
+
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+71:There are changes in the repository:
+89:更新时间: 11/27/2025, 6:00:21 PM
+94:更新时间已记录到日志文件
+82:标准错误: To https://github.com/haiyangzhaoo/site-tools.git
+   927496c..43f5daf  master -> master
+
+81:标准输出: [master 43f5daf] update:iptv source 11/27/2025, 6:00:21 PM
+ 10 files changed, 19 insertions(+), 17519 deletions(-)
+
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+71:There are changes in the repository:
+89:更新时间: 11/28/2025, 6:00:21 PM
+94:更新时间已记录到日志文件
+81:标准输出: [master a1bf0f7] update:iptv source 11/28/2025, 6:00:21 PM
+ 3 files changed, 5 insertions(+), 4295 deletions(-)
+
+82:标准错误: To https://github.com/haiyangzhaoo/site-tools.git
+   43f5daf..a1bf0f7  master -> master
+
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+71:There are changes in the repository:
+89:更新时间: 12/1/2025, 6:00:21 PM
+94:更新时间已记录到日志文件
+82:标准错误: To https://github.com/haiyangzhaoo/site-tools.git
+   a1bf0f7..1a37bc4  master -> master
+
+81:标准输出: [master 1a37bc4] update:iptv source 12/1/2025, 6:00:21 PM
+ 2 files changed, 3 insertions(+), 227 deletions(-)
+
+48:已删除 site-tools 项目的 assets 文件夹
+54:已将 assets 文件夹复制到 site-tools 项目
+71:There are changes in the repository:
+89:更新时间: 12/2/2025, 6:00:21 PM
+94:更新时间已记录到日志文件
+82:标准错误: To https://github.com/haiyangzhaoo/site-tools.git
+   1a37bc4..1ad97b8  master -> master
+
+81:标准输出: [master 1ad97b8] update:iptv source 12/2/2025, 6:00:21 PM
+ 1 file changed, 1 insertion(+)
+
