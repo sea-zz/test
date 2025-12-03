@@ -1,0 +1,30 @@
+{
+  "name": "blog-egg-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "egg-bin dev",
+    "start": "egg-scripts start --daemon",
+    "stop": "egg-scripts stop"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "await-stream-ready": "^1.0.1",
+    "cheerio": "^1.0.0-rc.12",
+    "egg": "^3.3.3",
+    "egg-mysql": "^3.1.1",
+    "egg-scripts": "^2.17.0",
+    "egg-sequelize": "^6.0.0",
+    "iconv-lite": "^0.6.3",
+    "md5": "^2.3.0",
+    "mysql2": "^2.3.3",
+    "node-xlsx": "^0.21.0",
+    "stream-wormhole": "^1.1.0"
+  },
+  "devDependencies": {
+    "egg-bin": "^5.3.1"
+  }
+}
