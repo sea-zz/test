@@ -1,0 +1,5 @@
+<!--components/list-item/list-item.wxml-->
+<view class="list-item" bind:tap="handleClick" data-url="{{item.url}}" data-title="{{item['tvg-name']}}">
+    <image src="{{item['tvg-logo']}}" alt="11" />
+    <text>{{item['tvg-name']}}</text>
+</view>

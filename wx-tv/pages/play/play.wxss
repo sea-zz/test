@@ -1,0 +1,7 @@
+/* pages/play/play.wxss */
+.video-container {
+    
+}
+.video-container video {
+    width: 100%;
+}

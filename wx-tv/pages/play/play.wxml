@@ -1,0 +1,23 @@
+<!--pages/play/play.wxml-->
+<view wx:if="{{!url}}" class="loading">
+    loading
+</view>
+<view wx:else class="video-container">
+    <video 
+        src="{{url}}"
+        controls 
+        autoplay 
+        title="{{title}}" 
+        vslide-gesture="true" 
+        direction="90" 
+        object-fit="contain" 	
+        play-btn-position="center"
+        enable-play-gesture="true"
+        show-bottom-progress="false"
+        show-casting-button="true"
+        enable-auto-rotation="true"
+        show-screen-lock-button="true"
+        show-snapshot-button="true"
+        binderror="playError"
+    />
+</view>

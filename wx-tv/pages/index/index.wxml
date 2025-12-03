@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <form catchsubmit="onSubmit" bindsubmit="onSubmit" class="form">
+    <view class="input-container">
+        <input type="text" name="title" placeholder="请输入频道名称" bindinput="handleChange" />
+        <button size="mini" type="primary" loading="{{loading}}" form-type="submit">搜索</button>
+    </view>
+  </form>
+  <view class="list-container">
+    <view wx:if="{{searchList}}" class="search-list">
+        <text class="total">共 {{searchList.length}} 条</text>
+        <view wx:for="{{searchList}}" wx:key="index">
+            <searchListItem item="{{item}}">{{JSON.stringify(item)}}</searchListItem>
+        </view>
+    </view>
+    <view wx:else class="all-item">
+        <view class="left">
+        <view wx:for="{{list}}" wx:key="index" class="left-item {{currentTitle === item.title ? 'select' : ''}}" data-title="{{item.title}}" bindtap="onChangeCate">
+            <text>{{item.title}}</text>
+        </view>
+        </view>
+        <view class="right">
+            <view wx:if="{{currentTitle && currentData}}">
+                <text class="total">共 {{currentData.data.count}} 条</text>
+                <view wx:for="{{currentData.data.list}}" wx:key="index">
+                    <listItem item="{{item}}"></listItem>
+                </view>
+            </view>
+            <view wx:else>
+                <listEmpty />
+            </view>
+        </view>
+    </view>
+  </view>
+</scroll-view>

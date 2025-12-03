@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "listItem": "/components/list-item/list-item",
+    "searchListItem": "/components/search-list-item/search-list-item",
+    "listEmpty": "/components/list-empty/list-empty" 
+  }
+}

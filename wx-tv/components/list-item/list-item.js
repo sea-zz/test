@@ -1,0 +1,31 @@
+// components/list-item/list-item.js
+Component({
+
+    /**
+     * 组件的属性列表
+     */
+    properties: {
+      item: {
+          type: Object,
+          value: null
+      }
+    },
+  
+    /**
+     * 组件的初始数据
+     */
+    data: {
+    },
+  
+    /**
+     * 组件的方法列表
+     */
+    methods: {
+      handleClick(e) {
+        console.log(1111, e.currentTarget.dataset)
+          wx.navigateTo({
+            url: `/pages/play/play?url=${e.currentTarget.dataset.url}&title=${e.currentTarget.dataset.title}` 
+          })
+      }
+    }
+  })

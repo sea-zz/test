@@ -1,0 +1,16 @@
+/* components/list-item/list-item.wxss */
+.list-item {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 16rpx;
+    padding: 20rpx;
+    background-color: #f8f8fa;
+    color: #192338;
+}
+.list-item image {
+    width: 100px;
+    height: 60px;
+    margin-right: 16px;
+}
+
