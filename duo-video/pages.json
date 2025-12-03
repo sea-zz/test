@@ -1,0 +1,38 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "哆看电视",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false,
+				  "orientation": "landscape", // 强制横屏
+				  "subNVues": [
+					  {
+						"id": "channelPanel", // 子窗体ID，用于后续获取实例
+						"path": "pages/index/channel-panel", // 指向一个 nvue 文件
+						"style": {
+						  "position": "absolute",
+						  "top": "0",
+						  "left": "0",
+						  "width": "100%",
+						  "height": "100%",
+						  "background": "transparent"
+						}
+					  }
+					]
+				}
+			}
+		}
+	],
+
+	"globalStyle": {
+		"navigationStyle": "custom",
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}

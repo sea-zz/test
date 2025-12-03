@@ -1,0 +1,299 @@
+<template>
+  <view class="channel-panel" @click="onContainerClick">
+    <view class="channel-panel-container">
+      <!-- 左侧分类列表 -->
+      <view class="category-list" :style="{height: scrollViewHeight}">
+        <scroll-view class="category-scroll" scroll-y="true">
+          <view
+            v-for="(cate, index) in cateChannel"
+            :key="index"
+            class="category-item"
+            :class="{ active: activeCategory === cate.title }"
+            @click="changeCategory(cate.title)"
+          >
+			<text class="category-item-text">{{ cate.title }}</text>
+          </view>
+		  <view
+		    key="uuid"
+		    class="category-item"
+		    :class="{ active: activeCategory === '个人信息' }" 
+		    @click="changeCategory('个人信息')"
+		  >
+		  	<text class="category-item-text">个人信息</text>
+		  </view>
+        </scroll-view>
+      </view>
+
+      <!-- 右侧频道列表 -->
+      <view class="channel-list" :style="{height: scrollViewHeight}">
+		<view v-if="activeCategory === '个人信息'" :class="{channel_item_info: activeCategory === '个人信息'}">
+			<text style="color: #fff;font-size: 20rpx;">uid: {{uuid}}</text>
+			<view class="kefu">
+				<image class="wx" src="https://site-tools.netlify.app/concat/wx.png"></image>
+				<image class="qq" src="https://site-tools.netlify.app/concat/qq.png"></image>
+			</view>
+			<text v-if="!vip" style="color: #fff;" class="info-uid">尊敬的用户，您的体验时间为两天，如想长久使用，扫码联系支持！</text>
+			<text style="color: #fff;" class="info-uid">警告：系统重置、刷机、应用卸载均可致用户UID变化，导致APP不可用，请谨慎操作！！！</text>
+		</view>
+        <scroll-view v-else class="channel-scroll" scroll-y="true">
+          <view
+            class="channel-item" 
+            v-for="(channel, index) in filteredChannels" 
+            :key="index"
+            :class="{ active: currentChannelUrl === channel.url }"
+            @click="switchChannel(channel)"
+          >
+            <view class="channel-number">
+				<text class="channel-number-text">{{ index + 1 }}</text>
+			</view>
+            <view class="channel-name">
+				<text class="channel-name-text">{{ channel.tvg_name || channel.tvg_id || channel.group_title }}</text>
+			</view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+let base = 'https://site-tools.netlify.app/'
+// if(process.env.NODE_ENV === 'development') {
+//   base = '/api/'
+// }
+
+export default {
+  data() {
+    return {
+      visible: false,
+      cateChannel: [],
+      channels: [],
+      activeCategory: '',
+      currentChannelUrl: '',
+	  uuid: '',
+	  vip: false,
+	  scrollViewHeight: '0rpx' // 初始设为0
+    }
+  },
+  computed: {
+    filteredChannels() {
+      return this.channels.find((channel) => channel.title === this.activeCategory).list;
+    },
+	heightToRpx() {
+		const systemInfo = uni.getSystemInfoSync();
+		const heightRpx = Math.floor(systemInfo.windowHeight * 750 / systemInfo.windowWidth);
+		return {
+			height: `${heightRpx - 20}rpx`
+		};
+	},
+  },
+	async onLoad() {
+		// 加载频道数据
+		await this.loadChannelData()
+		// 监听来自父页面的消息
+		uni.$on('showChannelPanel', this.handleShowPanel)
+		uni.$on('hideChannelPanel', this.handleHidePanel)
+		// 2. 等待DOM更新
+		this.$nextTick(() => {
+			// 3. 此时所有DOM元素都已渲染完成
+			this.calculateScrollHeight()
+		});
+	},
+	onUnload() {
+		// 移除事件监听
+		uni.$off('showChannelPanel', this.handleShowPanel)
+		uni.$off('hideChannelPanel', this.handleHidePanel)
+	},
+	methods: {
+		calculateScrollHeight() {
+			return new Promise((resolve) => {
+				const systemInfo = uni.getSystemInfoSync();
+				const heightRpx = Math.floor(systemInfo.windowHeight * 750 / systemInfo.windowWidth);
+				this.scrollViewHeight = `${heightRpx - 20}rpx`;
+				resolve()
+			});
+		},
+		// 加载频道数据
+		async loadChannelData() {
+			try {
+				// 加载分类数据
+				const categoryRes = await uni.request({
+					url: base + 'assets/menu.json'
+				})
+		  
+				this.activeCategory = categoryRes.data[0].title
+				this.cateChannel = categoryRes.data
+
+				// 加载各分类下的频道数据
+				const allRequest = categoryRes.data.map(item => {
+					return new Promise((resolve, reject) => {
+						uni.request({
+							url: base + `assets/${item.title}.json`,
+							success: (res) => resolve(res.data.list),
+							fail: (err) => reject(err)
+						});
+					});
+				});
+				const allData = await Promise.all(allRequest);
+				this.channels = categoryRes.data.map((item, idx) => {
+					return {
+						...item,
+						list: allData[idx]
+					};
+				});
+			  
+				// 默认选中第一个频道
+				if (this.channels.length > 0 && this.channels[0].list.length > 0) {
+					this.currentChannel = this.channels[0].list[0]
+					this.currentChannelUrl = this.channels[0].list[0].url
+					// 发射事件给父页面，通知切换频道
+					uni.$emit('channelSelected', this.currentChannel);
+					uni.$emit('hideLoading');
+				}
+			} catch (error) {
+				console.error('加载频道数据失败:', error)
+			}
+		},
+		onContainerClick(e) {
+			// 阻止事件冒泡
+			e.stopPropagation()
+		},
+
+		handleShowPanel(data) {
+			console.log('nav显示', data.uuid, data.vip);
+			this.visible = true
+			this.uuid = data.uuid;
+			this.vip = data.vip;
+		},
+		handleHidePanel(data) {
+			console.log('nav不展示');
+			this.visible = false
+		},
+
+		changeCategory(category) {
+			this.activeCategory = category
+		},
+		
+		switchChannel(channel) {
+			this.visible = false
+			this.currentChannelUrl = channel.url;
+			// 发射事件给父页面，通知切换频道
+			uni.$emit('channelSelected', channel)
+		},
+
+		getChannelNumber(channel) {
+			const index = this.channels.findIndex(c => c.url === channel.url)
+			return index + 1
+		}
+	}
+}
+</script>
+
+<style scoped>
+.channel-panel {
+  flex: 1;
+  position: absolute;
+  width: 450rpx;
+  top: 10rpx;
+  left: 10rpx;
+  bottom: 10rpx;
+  border-radius: 16rpx;
+  background: rgba(0, 100, 200, 0.3);
+  /* 半透明蓝色背景 */
+  backdrop-filter: blur(4px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.channel-panel-container {
+  flex-direction: row;
+}
+
+/* 左侧分类列表 */
+.category-list {
+  width: 135rpx;
+  /* height: 320rpx; */
+  border-right-width: 1px;
+  background: rgba(0, 80, 160, 0.4);
+  border-right-color: rgba(255, 255, 255, 0.8);
+}
+
+.category-item {
+  height: 60rpx;
+  align-items: center;
+  justify-content: center;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+  padding: 0 20rpx;
+}
+.category-item-text {
+	color: rgb(255, 255, 255);
+	font-size: 24rpx;
+	font-weight: 500;
+    cursor: pointer;
+}
+
+.category-item.active {
+	background: rgba(255, 255, 255, 0.2);
+}
+/* 右侧频道列表 */
+.channel-list {
+	width: 315rpx;
+}
+
+.channel-item {
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 20rpx;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.channel-item.active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.channel-number {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  background-color: #FF7F00;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30rpx;
+}
+.channel-number-text {
+	color: white;
+}
+.channel-name {
+	width: 205rpx;
+	white-space: normal; /* 文本自动换行 */
+	word-break: break-all; /* 允许在单词内换行 */
+	word-wrap: break-word;
+}
+.channel-name-text {
+	color: #fff;
+	font-size: 22rpx;
+	flex: 1;
+	font-weight: 600;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.channel_item_info {
+	margin-left: 10rpx;
+}
+.kefu {
+	height: 150rpx;
+	display: flex;
+	flex-direction: row;
+	margin-top: 10rpx;
+	margin-bottom: 10rpx;
+}
+.wx, .qq {
+	width: 150rpx;
+	height: 150rpx;
+}
+.qq {
+	margin-left: 10rpx;
+}
+</style>

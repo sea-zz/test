@@ -1,0 +1,69 @@
+
+.app-container-vip[data-v-1cf27b2a] {
+	width: 100vw;
+	height: 100vh;
+	padding: 0.3125rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	box-sizing: border-box;
+}
+.kefu[data-v-1cf27b2a] {
+	display: flex;
+	gap: 0.625rem;
+	margin-bottom: 0.3125rem;
+	justify-content: space-around;
+	box-sizing: border-box;
+}
+.wx[data-v-1cf27b2a],.qq[data-v-1cf27b2a] {
+	width: 4.6875rem;
+	height: 4.6875rem;
+}
+.info-uid[data-v-1cf27b2a] {
+	margin-bottom: 0.3125rem;
+	font-size: 0.5625rem;
+}
+.uid[data-v-1cf27b2a] {
+	color: rgba(0, 100, 200);
+	font-weight: 600;
+}
+.error[data-v-1cf27b2a] {
+	font-weight: 600;
+}
+.app-container[data-v-1cf27b2a] {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+.kefu-info[data-v-1cf27b2a] {
+	flex: 1;
+}
+.uid-info[data-v-1cf27b2a] {
+	width: 7.8125rem;
+	margin-left: 0.625rem;
+	border-left: 1px solid rgba(0, 0, 0, .07);
+	align-items: center;
+	justify-items: center;
+	align-content: center;
+	box-sizing: border-box;
+}
+.info-tips[data-v-1cf27b2a] {
+	font-size: 0.5625rem;
+	margin-top: 0.3125rem;
+}
+/* 视频播放区域 */
+.video-player[data-v-1cf27b2a] {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.video-overlay[data-v-1cf27b2a] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  /* 调试时可临时开启背景色查看点击区域 */
+/* background-color: rgba(255, 0, 0, 0.5); */
+}

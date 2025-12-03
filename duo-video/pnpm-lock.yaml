@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      uqrcodejs:
+        specifier: ^4.0.7
+        version: 4.0.7
+
+packages:
+
+  uqrcodejs@4.0.7:
+    resolution: {integrity: sha512-84+aZmD2godCVI+93lxE3YUAPNY8zAJvNA7xRS7R7U+q57KzMDepBSfNCwoRUhWOfR6eHFoAOcHRPwsP6ka1cA==}
+
+snapshots:
+
+  uqrcodejs@4.0.7: {}
