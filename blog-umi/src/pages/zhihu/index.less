@@ -1,0 +1,57 @@
+.hot {
+    span {
+        font-size: 12px;
+        color: #939393;
+        margin-top: 10px;
+        line-height: 17px;
+    }
+}
+.more {
+    text-align: center;
+    color: #939393;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.topic_list {
+    :global{
+        .ant-list-item-meta-avatar {
+            span {
+                &:first-child {
+                    width: 45.46px;
+                    height: 22.79px;
+                    margin-top: -5px;
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    position: relative;
+                    font-size: 14px;
+                    color: #fff;
+                    display: inline-block;
+                    &.hot > i {
+                        left: auto;
+                        right: 28.5%;
+                        bottom: -3px;
+                        position: absolute;
+                        transform: skewX(-10deg);
+                    }
+                    i {
+                        position: absolute;
+                        bottom: 1px;
+                        left: 50%;
+                        -webkit-transform: translate(-50%) skewX(-10deg);
+                        transform: translate(-50%) skewX(-10deg);
+                    }
+                }
+            }
+        }
+        // 三行
+        .ant-list-item-meta-description {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+        }
+    }
+}
